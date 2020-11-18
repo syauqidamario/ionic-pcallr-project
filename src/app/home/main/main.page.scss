@@ -1,3 +1,35 @@
 ion-toolbar{
     background: linear-gradient(72.59deg, #00FE47 0%, #6E95FB 100%);
 }
+
+.container {
+    padding: 6px 20px;
+    color: #000000;
+
+    ion-item {
+      --background: rgba(255,255,255,.1);
+      padding: 0;
+      margin: 14px 0;
+      --border-radius: 30px;
+      color: #000000;
+      font-weight: 600;
+
+      ion-label {
+        padding: 6px 0;
+
+        h4 {
+          font-weight: 600;
+          font-size: 16px;
+        }
+        h6 {
+          color: rgba(43, 42, 42, 0.66);
+        }
+      }
+
+    }
+
+    h2 {
+      padding-bottom: 8px;
+    }
+
+  }
