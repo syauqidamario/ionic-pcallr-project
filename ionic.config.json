@@ -1,0 +1,7 @@
+{
+  "name": "pcr",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
