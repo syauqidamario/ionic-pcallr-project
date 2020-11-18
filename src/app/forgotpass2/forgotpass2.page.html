@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Forgot Password</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid justify-content-center align-items-center>
+    <ion-row>
+      <ion-col  size="12" size-sm="8" offset-sm="2">
+        <br><br><br><br>        
+        Insert Your New Password
+        <br><br><br><br>
+      </ion-col>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <form   #form="ngForm" (ngSubmit)="onSubmit(form)"class="list-form">
+          <ion-item>
+            <ion-label floating>
+              Password
+            </ion-label>
+            <ion-input type="password" name="resetpassword"></ion-input>
+          </ion-item>
+        </form>      
+
+        <ion-button expand="block" shape="round" color="primary">Reset Password</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

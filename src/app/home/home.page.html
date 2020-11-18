@@ -1,20 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="terdekat">
+      <ion-label color="success">Terdekat</ion-label>
+      <ion-icon color="success" name="location-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="managebooking">
+      <ion-label color="success">Booking</ion-label>
+      <ion-icon color="success" name="pencil-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="main">
+      <ion-label color="success">Masuk</ion-label>
+      <ion-icon color="success" name="home-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="history">
+      <ion-label color="success">History</ion-label>
+      <ion-icon color="success" name="copy-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-label color="success">Profile</ion-label>
+      <ion-icon color="success" name="person-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
