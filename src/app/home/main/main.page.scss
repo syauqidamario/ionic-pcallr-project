@@ -4,14 +4,12 @@ ion-toolbar{
 
 .container {
     padding: 6px 20px;
-    color: #000000;
-
     ion-item {
       --background: rgba(255,255,255,.1);
       padding: 0;
       margin: 14px 0;
       --border-radius: 30px;
-      color: #000000;
+      // color: #000000;
       font-weight: 600;
 
       ion-label {
@@ -33,3 +31,11 @@ ion-toolbar{
     }
 
   }
+
+  ion-card{
+    position: center;
+    border-radius: 20px;
+    
+    transform: rotate(0.04deg);
+    background: #DEFFE5;
+}

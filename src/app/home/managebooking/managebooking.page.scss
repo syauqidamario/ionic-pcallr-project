@@ -1,4 +1,20 @@
 ion-header{
 background: linear-gradient(72.59deg, #00FE47 0%, #6E95FB 100%);
+}
+ion-card{
+    position: center;
+    border-radius: 20px;
+    
+    transform: rotate(0.04deg);
+    background: #DEFFE5;
+}
 
+ion-img{
+    border-radius: 57px;
+    height: 250px;
+    padding-top: 25px;
+}
+
+ion-button{
+    color: #cf3c4f;
 }
