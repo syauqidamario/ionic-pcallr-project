@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" defaultHref="home/tabs/main">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
     <ion-title>Manage My Booking</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,23 +19,25 @@
 
 </ion-content> -->
 <ion-content class="padding has-header" ng-controller="lisCtrl">
-  <div class="card list">
-    <ion-item class="item-avatar">
-      <img src="icon/logo.png">
-      <h2>Pemalas</h2>
-      <p>Author</p>
-    </ion-item>
-    <ion-item class="item-body">
-      <img class="full-image" src="icon/Pcr.webp">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-    </ion-item>
-    <ion-item class="item-image">
-      <p>
-        <a class="icon ion-thumbsup subdued"> suka</a>
-        <a class="icon ion-android-add subdued"> share</a>
-      </p>
-    </ion-item>
-  </div>
+  <ion-col size="12" size-sm="8" offset-sm="2">
+    <ion-card>
+      <ion-grid>
+       <ion-row>
+        <ion-col>
+      <img src="https://www.bintarojaya.id/uploads/news/rspiberita.jpg">
+      </ion-col>
+      <ion-col>
+      <ion-card-header><h1>Rumah Sakit 1</h1></ion-card-header>
+      <ion-card-content>
+        <h1>Tanggal : 1-11-2020 <br></h1>
+        <h1>Waktu : 12.30 WIB <br></h1>
+        <h1>Ruang : Ruang A <br></h1>
+        <h1>Waktu Tunggu : 3 Jam <br></h1>
+      </ion-card-content>
+      </ion-col>
+       </ion-row>
+       <ion-button expand="block" shape="round" color="primary" >BATAL</ion-button>
+      </ion-grid>
+    </ion-card>
+    </ion-col>
 </ion-content>

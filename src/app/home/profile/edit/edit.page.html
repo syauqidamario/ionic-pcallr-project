@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button color="primary" defaultHref="home/tabs/main">
-        <ion-icon slot="icon-only" name="arrow-back" defaultHref="/home/tabs/main"></ion-icon>
+      <ion-back-button color="primary" defaultHref="home/tabs/profile">
+        <ion-icon slot="icon-only" name="arrow-back" defaultHref="/home/tabs/profile"></ion-icon>
       </ion-back-button>
     </ion-buttons>
-    <ion-title>Booking</ion-title>
+    <ion-title>Edit</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,15 +21,19 @@
         <ion-input type="text" ngModel name="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Foto KTP</ion-label>
-        <ion-input type="text" ngModel name="fotoktp"></ion-input>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="text" ngModel name="password"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Phone</ion-label>
         <ion-input type="text" ngModel name="tlpn"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-label position="floating">NIK</ion-label>
+        <ion-input type="text" ngModel name="nik"></ion-input>
+      </ion-item>
     </ion-list>
-    <ion-button type="submit" color="primary" expand="block">BOOKING</ion-button>
+    <ion-button type="submit" color="primary" expand="block">SIMPAN</ion-button>
   </form>
 
 </ion-content>

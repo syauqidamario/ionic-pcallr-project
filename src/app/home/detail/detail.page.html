@@ -1,11 +1,16 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" defaultHref="home/tabs/main">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
     <ion-title>Rumah Sakit</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid justify-content-center align-items-center>
     <ion-row>
       <ion-col>
         <ion-img src="assets/icon/Pcr.webp"></ion-img>
@@ -26,9 +31,13 @@
   <ion-card>
     <ion-card-header>Waktu :</ion-card-header>
   </ion-card>
-  <button>
-    BOOKING FOR
-  </button>
+  <ion-grid justify-content-center align-items-center>
+    <ion-row>
+        <ion-col size="12" size-sm="8" offset-sm="2">
+          <ion-button expand="block" shape="round" color="primary"  href="home/tabs/booking">BOOKING FOR</ion-button>
+        </ion-col>      
+    </ion-row>
+  </ion-grid>
 </ion-grid>
 
 </ion-content>
