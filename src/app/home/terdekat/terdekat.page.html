@@ -1,17 +1,9 @@
 <ion-header>
-<<<<<<< HEAD
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button color="primary" defaultHref="home/tabs/main">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-back-button>
-=======
-  <ion-toolbar>\
-    <ion-buttons slot="start">
-      <ion-button color="primary">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
->>>>>>> e6f723bd9cd10c1d5c8d7eb6415cde6eb8334470
     </ion-buttons>
     <ion-title>Terdekat</ion-title>
   </ion-toolbar>
@@ -24,20 +16,13 @@
         <ion-img  class="image" src="https://www.google.com/maps/d/thumbnail?mid=1Xbkrh789WSsHPBfq4_JpXs5EV2g"></ion-img>
       </ion-col>
       <ion-col size="12" size-sm="8" offset-sm="2">
-        <ion-card>
-          <ion-card-header>Rumah Sakit 1</ion-card-header>
+        <ion-card *ngFor="let rs of rumahsakit" routerLink="/home/tabs/detail/{{rs.key}}">
+          <ion-card-header>{{rs.nama}}</ion-card-header>
             <ion-card-content>
-              Alamat : <br>
-              Waktu Tunggu :
+              Alamat : {{rs.alamat}}<br>
+              Harga : Rp.{{rs.harga}}
             </ion-card-content>
           </ion-card>
-          <ion-card>
-          <ion-card-header>Rumah Sakit 1</ion-card-header>
-            <ion-card-content>
-              Alamat : <br>
-              Waktu Tunggu :
-            </ion-card-content>
-        </ion-card>
       </ion-col>
     </ion-row> 
   </ion-grid>

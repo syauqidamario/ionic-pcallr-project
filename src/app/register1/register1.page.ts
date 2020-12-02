@@ -11,20 +11,20 @@ import { AuthService } from '../services/auth.service';
 })
 export class Register1Page implements OnInit {
 
-  validations_form: FormGroup;
-  errorMessage: string = '';
-  successMessage: string = '';
+  // validations_form: FormGroup;
+  // errorMessage: string = '';
+  // successMessage: string = '';
 
-  validation_messages = {
-    email: [
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Enter a valid email.' }
-    ],
-    password: [
-      { type: 'required', message: 'Password is required.' },
-      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
-    ]
-  };
+  // validation_messages = {
+  //   email: [
+  //     { type: 'required', message: 'Email is required.' },
+  //     { type: 'pattern', message: 'Enter a valid email.' }
+  //   ],
+  //   password: [
+  //     { type: 'required', message: 'Password is required.' },
+  //     { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+  //   ]
+  // };
 
   constructor(
     private navCtrl: NavController,
@@ -34,31 +34,42 @@ export class Register1Page implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.validations_form = this.formBuilder.group({
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
-      password: new FormControl('', Validators.compose([
-        Validators.minLength(5),
-        Validators.required
-      ]))
-    });
+    // this.validations_form = this.formBuilder.group({
+    //   email: new FormControl('', Validators.compose([
+    //     Validators.required,
+    //     Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+    //   ])),
+    //   password: new FormControl('', Validators.compose([
+    //     Validators.minLength(5),
+    //     Validators.required
+    //   ]))
+    // });
   }
 
-  tryRegister(value) {
-    this.authSrv.registerUser(value)
-      .then(res => {
-        console.log(res);
-        this.errorMessage = '';
-        this.successMessage = 'Your account has been created. Please log in.';
-        this.router.navigateByUrl('/login');
+  // tryRegister(value) {
+  //   this.authSrv.registerUser(value)
+  //     .then(res => {
+  //       console.log(res);
+  //       this.errorMessage = '';
+  //       this.successMessage = 'Your account has been created. Please log in.';
+  //       this.router.navigateByUrl('/login');
 
-      }, err => {
-        console.log(err);
-        this.errorMessage = err.message;
-        this.successMessage = '';
-      });
+  //     }, err => {
+  //       console.log(err);
+  //       this.errorMessage = err.message;
+  //       this.successMessage = '';
+  //     });
+  // }
+
+  signUp(email, password, name, addres, phone, nik){
+    this.authSrv.RegisterUser(email.value, password.value, name.value, addres.value, phone.value, nik.value)
+        .then((res) => {
+          // Do send verification email
+          this.authSrv.SendVerificationMail()
+          this.router.navigate(['/register2']);
+        }).catch((error) => {
+      window.alert(error.message)
+    })
   }
 
   goLoginPage() {

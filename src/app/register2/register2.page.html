@@ -1,23 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-<<<<<<< HEAD
       <ion-back-button color="primary" defaultHref="register1">
 
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-back-button>
-=======
-      <ion-button color="primary">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
->>>>>>> e6f723bd9cd10c1d5c8d7eb6415cde6eb8334470
+    </ion-buttons>
     <ion-title>Register Step 2</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   
-<ion-grid justify-content-center align-items-center>
+<!-- <ion-grid justify-content-center align-items-center>
   <ion-row>
      <ion-col size="12" size-sm="8" offset-sm="2">
       <form   #form="ngForm" (ngSubmit)="onSubmit(form)" class="list-form">
@@ -31,6 +26,19 @@
 
       <ion-button expand="block" shape="round" color="primary" href="login">Sign Up</ion-button>
      </ion-col>
+  </ion-row>
+</ion-grid> -->
+
+<ion-grid>
+  <ion-row>
+    <h2>Ionic 4 Firebase Verify Email</h2><br>
+    <p>
+      Please check your email and click on the link to verfiy your email address.
+    </p>
+    <ion-button type="submit" (click)="authService.SendVerificationMail()" expand="block">
+      Resend Verification Email
+    </ion-button>
+    <ion-button type="submit" href="/login" expand="block">Login</ion-button>
   </ion-row>
 </ion-grid>
 

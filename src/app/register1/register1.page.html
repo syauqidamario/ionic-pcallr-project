@@ -6,7 +6,7 @@
       </ion-back-button>
     </ion-buttons>
     
-    <ion-title>Register Step 1</ion-title>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,15 +17,16 @@
         <ion-card color="primary" text-center padding >
           <ion-img  style="height: 10em; " src="assets/icon/logo.png"></ion-img>
          </ion-card>
-         <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
-          <!-- <ion-item>
-            <ion-label floating>
+
+         <form>
+          <ion-item>
+            <ion-label position="floating">
               Nama
             </ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item> -->
+            <ion-input type="text" #name required></ion-input>
+          </ion-item>
 
-          <ion-item>
+          <!-- <ion-item>
             <ion-label position="floating" color="primary">Email</ion-label>
             <ion-input type="text" formControlName="email"></ion-input>
           </ion-item>
@@ -48,35 +49,47 @@
                     {{ validation.message }}
               </div>
             </ng-container>
-          </div>
+          </div> -->
       
         
-          <!-- <ion-item>
-            <ion-label floating>
-              Password
+          <ion-item>
+            <ion-label position="floating">
+              Email
             </ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input type="text" #email required></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating>
+            <ion-label position="floating">
+              Password
+            </ion-label>
+            <ion-input type="password" #password required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">
+              Alamat
+            </ion-label>
+            <ion-input type="text" #addres required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">
               Nomor Telephone
             </ion-label>
-            <ion-input type="password"></ion-input>
-<<<<<<< HEAD
-          </ion-item> -->
-          <ion-button class="submit-btn" type="submit" [disabled]="!validations_form.valid">Register</ion-button>
-          <label class="error-message">{{errorMessage}}</label>
-          <label class="success-message">{{successMessage}}</label>
+            <ion-input type="text" #phone required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">
+              NIK
+            </ion-label>
+            <ion-input type="text" #nik required></ion-input>
+          </ion-item>
+
+          <ion-button type="submit" (click)="signUp(email, password, name, addres, phone, nik)" expand="block">Register</ion-button>
+          <!-- <label class="error-message">{{errorMessage}}</label>
+          <label class="success-message">{{successMessage}}</label> -->
         </form>  
         <br>
         <p class="go-to-login">Already have an account? <a (click)="goLoginPage()">Try to Log In</a></p>
         <!-- <ion-button expand="block" shape="round" color="primary" href="register2">Next</ion-button> -->
-=======
-          </ion-item>
-        </form>      
-
-        <ion-button expand="block" shape="round" color="primary" href="register2">Next</ion-button>
->>>>>>> e6f723bd9cd10c1d5c8d7eb6415cde6eb8334470
        </ion-col>
     </ion-row>
   </ion-grid>

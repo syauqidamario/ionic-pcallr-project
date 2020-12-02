@@ -1,45 +1,37 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-<<<<<<< HEAD
       <ion-back-button color="primary" defaultHref="home/tabs/main">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-back-button>
-=======
-      <ion-button color="primary">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
->>>>>>> e6f723bd9cd10c1d5c8d7eb6415cde6eb8334470
     </ion-buttons>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-col *ngIf="authSrv.isLoggedIn === true">
   <ion-item>
     <ion-avatar slot="start">
       <ion-img src="https://images.unsplash.com/photo-1503099000678-4f1908f1be2f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"></ion-img>
     </ion-avatar>
     <ion-label>
-      hellopcr
+      {{ names }}
     </ion-label>
     <ion-label>
-      1234567890
+      {{ niks }}
     </ion-label>
   </ion-item>
   <ion-item>
-    Lala Land 163 Jakarta Barat
+    {{ address }}
   </ion-item>
   <ion-item>
-<<<<<<< HEAD
-    {{userEmail}}
-=======
-    hello@pcallr.com
->>>>>>> e6f723bd9cd10c1d5c8d7eb6415cde6eb8334470
+    {{ userEmail }}
   </ion-item>
   <ion-item>
-    087823458901
+    {{ phones }}
   </ion-item>
+  </ion-col>
 
   <ion-card>
     <ion-card-content>
@@ -52,13 +44,13 @@
     </ion-card-content>
   </ion-card>
 
-<<<<<<< HEAD
   <ion-button href="home/tabs/profile/edit">
-=======
-  <button href="home/tabs/profile/edit">
->>>>>>> e6f723bd9cd10c1d5c8d7eb6415cde6eb8334470
       EDIT PROFILE
   </ion-button>
+
+  <ion-item *ngIf="authSrv.isLoggedIn === false">
+    <ion-button type="submit" href="/login">Masuk Sekarang</ion-button>
+  </ion-item>
 
 
 </ion-content>
