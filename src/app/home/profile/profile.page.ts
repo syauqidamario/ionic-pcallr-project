@@ -5,7 +5,7 @@ import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import {map} from 'rxjs/operators';
 import firebase from 'firebase';
-
+import { Camera } from '@ionic-native/camera/ngx';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -20,7 +20,7 @@ export class ProfilePage implements OnInit {
   address: any;
   phones: any;
   niks: any;
-
+  imgURL;
 
   mainuser: AngularFirestoreDocument;
   profilePic: any;
@@ -29,6 +29,7 @@ export class ProfilePage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
+    private camera: Camera,
     private authSrv: AuthService,
     public afDatabase: AngularFireDatabase
 
@@ -61,6 +62,32 @@ export class ProfilePage implements OnInit {
         console.log(err);
       });
     });
+  }
+
+  getCamera(){
+    this.camera.getPicture({
+      sourceType: this.camera.PictureSourceType.CAMERA,
+      destinationType: this.camera.DestinationType.FILE_URI
+    }).then((res) => {
+      this.imgURL = res;
+    }).catch(e => {
+      console.log(e);
+    })
+
+  }
+
+  getGallery(){
+    this.camera.getPicture({
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.DATA_URL
+    }).then((res) => {
+      this.imgURL = res;
+    }).catch(e => {
+      console.log(e);
+    })
+
+
+
   }
 
 }
