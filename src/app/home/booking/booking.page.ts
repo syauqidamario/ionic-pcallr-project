@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RumahsakitService } from 'src/app/services/rumahsakit.service';
 import { Camera } from '@ionic-native/camera/ngx';
+import { Observable } from 'rxjs';
+import { BookingService } from 'src/app/services/booking.service';
 
 @Component({
   selector: 'app-booking',
@@ -12,10 +14,12 @@ import { Camera } from '@ionic-native/camera/ngx';
 export class BookingPage implements OnInit {
 
   imgURL;
+  res: any = [];
+  data: Observable<any>;
 
   constructor(
     private router: Router,
-    private rsSrv: RumahsakitService,
+    private bookSrv: BookingService,
     private camera: Camera,
 
   ) { }
@@ -26,13 +30,13 @@ export class BookingPage implements OnInit {
   onSubmit(form: NgForm){
     console.log(form);
 
-    this.rsSrv.create(form.value).then(res => {
+    this.bookSrv.create(form.value).then(res => {
       console.log(res);
-      this.router.navigateByUrl('/home/tabs/main');
+      this.router.navigateByUrl('/home/tabs/managebooking');
     }).catch(error => console.log(error));
 
     form.reset();
-    this.router.navigateByUrl('/home/tabs/main');
+    this.router.navigateByUrl('/home/tabs/managebooking');
   }
 
   getCamera(){

@@ -14,7 +14,7 @@ export class RumahsakitService {
     this.rumahsakitRef = db.list(this.dbPath);
    }
 
-   getAll(): AngularFireList<Rumahsakit>{
+  getAll(): AngularFireList<Rumahsakit>{
     return this.rumahsakitRef;
   }
 
