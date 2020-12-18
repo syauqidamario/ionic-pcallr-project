@@ -17,16 +17,26 @@
         <ion-input type="text" ngModel name="nama"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Alamat</ion-label>
+        <ion-label position="floating">Rumah Sakit</ion-label>
         <ion-input type="text" ngModel name="alamat"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Phone</ion-label>
+        <ion-label position="floating">Tanggal</ion-label>
         <ion-input type="text" ngModel name="phone"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Harga</ion-label>
+        <ion-label position="floating">Waktu</ion-label>
         <ion-input type="text" ngModel name="harga"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Foto KTP</ion-label>
+        <div class="container">
+          <img src="{{imgURL}}" height="200" width="200"/>
+          <ion-row>
+          <ion-button (click)="getCamera()">From Camera</ion-button>
+          <ion-button (click)="getGallery()">From Gallery</ion-button>
+          </ion-row>
+        </div>
       </ion-item>
     </ion-list>
     <ion-button type="submit" color="primary" expand="block">BOOKING</ion-button>

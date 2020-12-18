@@ -11,16 +11,21 @@
 
 <ion-content>
   <ion-col *ngIf="authSrv.isLoggedIn === true">
+  <ion-row class="ion-justify-content-center">
+    <ion-row class="ion-align-items-end ion-justify-content-end">
+      <ion-fab-button color="primary" style="position: absolute; z-index: 1" (click)="presentActionSheet()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+      <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)">
+      <ion-img src="assets/icon/person.webp" style="object-fit: contain" *ngIf="!photo"></ion-img>
+      <img id="profilePicture" src="{{photo}}" class="circle-image" *ngIf="photo" (load)="imageLoaded()">
+    </ion-row>
+  </ion-row>
   <ion-item>
-    <ion-avatar slot="start">
-      <ion-img src="https://images.unsplash.com/photo-1503099000678-4f1908f1be2f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"></ion-img>
-    </ion-avatar>
-    <ion-label>
-      {{ names }}
-    </ion-label>
-    <ion-label>
-      {{ niks }}
-    </ion-label>
+    {{ names }}
+  </ion-item>
+  <ion-item>
+    {{ niks }}
   </ion-item>
   <ion-item>
     {{ address }}
@@ -32,16 +37,6 @@
     {{ phones }}
   </ion-item>
   </ion-col>
-
-
-<ion-content [fullscreen]="true">
-<div class="container">
-  <img src="{{imgURL}}" height="200" width="200"/>
-  <ion-button (click)="getCamera()">From Camera</ion-button>
-  <ion-button (click)="getGallery()">From Gallery</ion-button>
-</div>
-</ion-content>
-
 
   <ion-card>
     <ion-card-content>

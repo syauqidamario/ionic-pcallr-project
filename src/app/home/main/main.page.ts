@@ -28,17 +28,6 @@ export class MainPage implements OnInit {
   }, 1);}
 
   ngOnInit() {
-    // this.authSrv.userDetails().subscribe(res => {
-    //   console.log('res:', res);
-    //   console.log('uid: ', res.uid);
-    //   if (res !== null) {
-    //     this.userEmail = res.email;
-    //   } else {
-    //     this.navCtrl.navigateBack('');
-    //   }
-    // }, err => {
-    //   console.log(err);
-    // });
     this.rsSrv.getAll().snapshotChanges().pipe(
       map(changes =>
           changes.map(c => ({key: c.payload.key, ...c.payload.val()}))
@@ -48,10 +37,6 @@ export class MainPage implements OnInit {
     console.log(data);
   });
 }
-
-  // login() {
-  //   this.router.navigateByUrl('/login');
-  // }
 
   logout() {
     this.authSrv.logoutUser()

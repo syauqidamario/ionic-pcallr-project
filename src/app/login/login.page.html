@@ -6,9 +6,6 @@
       </ion-back-button>
     </ion-buttons>
     <ion-title>Login</ion-title>
-    <!-- <ion-buttons slot="end">
-      <ion-button routerLink="/signup">Sign up</ion-button>
-    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -25,35 +22,16 @@
               <ion-label position="floating">E-mail</ion-label>
               <ion-input type="text" #email required></ion-input>
             </ion-item>
-            <!-- <div class="validation-errors">
-              <ng-container *ngFor="let validation of validation_messages.email">
-                <div class="error-message"
-                     *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
-                      {{ validation.message }}
-                </div>
-              </ng-container>
-            </div> -->
             <ion-item>
               <ion-label position="floating">Password</ion-label>
               <ion-input type="password" #password required></ion-input>
             </ion-item>
-            <!-- <div class="validation-errors">
-              <ng-container *ngFor="let validation of validation_messages.password">
-                <div class="error-message"
-                     *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
-                      {{ validation.message }}
-                </div>
-              </ng-container>
-            </div> -->
           </ion-list>
           <ion-button type="submit" (click)="logIn(email, password)" expand="block">Log In</ion-button>
-          <!-- <label class="error-message">{{errorMessage}}</label> -->
         </form>
       <br>
         <a class="go-to-forgotpass1" (click)="goToForgotPassPage()">Forgot Password</a>
         <p class="go-to-register">No account yet? <a (click)="goToRegisterPage()">Register Here.</a></p>
-
-         <!-- <ion-button expand="block" shape="round" color="primary" href="home/tabs/main">Login</ion-button> -->
        </ion-col>
     </ion-row>
   </ion-grid>

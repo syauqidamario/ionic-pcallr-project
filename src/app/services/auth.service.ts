@@ -44,16 +44,6 @@ export class AuthService {
     });
     }
 
-  // registerUser(value){
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.fireAuth.createUserWithEmailAndPassword(value.email, value.password)
-  //     .then(
-  //       res => resolve(res),
-  //       err => reject(err)
-  //     );
-  //   });
-  // }
-
   RegisterUser(email, password, name, addres, phone, nik) {
     return firebase.auth().createUserWithEmailAndPassword(email, password).then((user) => {
       if (user) {
@@ -109,10 +99,6 @@ export class AuthService {
     })
   }
 
-  // isSignedIn() {
-  //   return this.fireAuth.currentUser ? true : false;
-  // }
-
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
@@ -144,4 +130,9 @@ export class AuthService {
     return this.afAuth.Auth.currentUser.updateEmail(newemail)
   }
 
+  update(key: string, value: any): Promise<void> {
+    return this.userRef.update(key, value);
+  }
+
 }
+
