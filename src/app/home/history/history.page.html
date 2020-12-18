@@ -10,37 +10,38 @@
 </ion-header>
 
 <ion-content>
+  <ion-col *ngIf="authSrv.isLoggedIn === true">
   <ion-grid>
   <ion-item>
-    hellopcr
+    {{ names }}
   </ion-item>
   <ion-item>
-    hello@pcallr.com
+    {{ userEmail }}
   </ion-item>
   <ion-item>
-    087823458901
+    {{ phones }}
   </ion-item>
       <ion-col>
         <ion-img src="https://i.pinimg.com/564x/2a/7f/1b/2a7f1b6d49425e97ff3d73fd7c20074b.jpg"></ion-img>
       </ion-col>
+      
 
       <ion-col size="12" size-sm="8" offset-sm="2">
-      <ion-card>
-        <ion-grid>
-         <ion-row>
+        <ion-card *ngFor="let book of databooking"> 
+          <ion-grid>
+           <ion-row>
+            <ion-col>
+          <img src="https://www.bintarojaya.id/uploads/news/rspiberita.jpg">
+          </ion-col>
           <ion-col>
-        <img src="https://www.bintarojaya.id/uploads/news/rspiberita.jpg">
-        </ion-col>
-        <ion-col>
-        <ion-card-header><h1>Rumah Sakit 1</h1></ion-card-header>
-        <ion-card-content>
-          <h1>Tanggal : 1-11-2020 <br></h1>
-          <h1>Waktu : 12.30 WIB <br></h1>
-          <h1>Ruang : Ruang A <br></h1>
-          <h1>Waktu Tunggu : 3 Jam <br></h1>
-        </ion-card-content>
-        </ion-col>
-         </ion-row>
+          <ion-card-header><h1>{{book.rumashsakit}}</h1></ion-card-header>
+          <ion-card-content>
+            <h1>Tanggal : {{book.tanggal}} <br></h1>
+            <h1>Waktu : {{book.waktu}} <br></h1>
+            <h1>Waktu Tunggu : 2 Jam <br></h1>
+          </ion-card-content>
+          </ion-col>
+           </ion-row>
          <ion-card color="warning">
            <ion-card-content class="ion-text-center">
              <h1>Status : OnGoing</h1>
@@ -49,7 +50,6 @@
         </ion-grid>
       </ion-card>
       </ion-col>
-
   </ion-grid>
-
+  </ion-col>
 </ion-content>

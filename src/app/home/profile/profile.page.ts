@@ -38,8 +38,6 @@ export class ProfilePage implements OnInit {
   private photo: SafeResourceUrl;
   @ViewChild('filePicker', { static: false }) filePickerRef: ElementRef<HTMLInputElement>;
 
-
-
   constructor(
     private navCtrl: NavController,
     private authSrv: AuthService,
@@ -59,7 +57,6 @@ export class ProfilePage implements OnInit {
 }
 
   ngOnInit() {
-
     this.authSrv.getUserData().snapshotChanges().pipe(
         map(changes =>
             changes.map(c => ({user_id: c.payload.key, ...c.payload.val()}))
